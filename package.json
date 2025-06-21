@@ -1,0 +1,24 @@
+{
+  "name": "lehra-nagma-app",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@picocss/pico": "^2.1.1",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.9",
+    "sweetalert2": "^11.22.0",
+    "tone": "^15.1.22",
+    "vite": "^6.3.5"
+  }
+}
