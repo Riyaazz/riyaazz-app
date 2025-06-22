@@ -95,9 +95,9 @@ if (!window.isLehraPlayerInitialized) {
                 }
 
                 // Dynamically populate the available Instruments
-                const instruments = [...new Set(this.tracks.map(t => t.instrument))];
+                const instruments = [...new Set(this.tracks.map(t => t.instrument))].sort();
                 this.availableInstruments = ['all', ...instruments]; // Add 'all' to the beginning
-                this.selectedInstrument = 'santoor'; // Default to 'santoor'
+                this.selectedInstrument = 'all'; // Default to 'all'
 
                 this.handleFilterChange();
             } catch (error) {
