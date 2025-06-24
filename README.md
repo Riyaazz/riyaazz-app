@@ -4,35 +4,55 @@ A simple web application for practicing Indian classical music with Lehra/Nagma 
 
 ## Features
 
-- Play Lehra/Nagma tracks for tabla and other Indian percussion practice
-- Select Taal (rhythmic cycle) and instrument
-- Change pitch and tempo in real-time
-- Responsive, mobile-friendly UI
+- **Progressive Web App (PWA):** Fully offline-capable and installable on mobile devices ("Add to Home Screen").
+- **Real-time Playback Control:** Play, pause, and seek through tracks.
+- **Pitch and Tempo Shifting:** Adjust the pitch (scale) and tempo (BPM) in real-time.
+- **Taal and Instrument Selection:** Filter tracks by rhythmic cycle and instrument.
+- **Responsive Design:** Clean, mobile-friendly UI that works on any device.
+- **Efficient Caching:** Audio files and app assets are cached for fast loading and offline use.
 
 ## Tech Stack
 
-- [**Tone.js**](https://tonejs.github.io/): Audio library for playback and manipulation of BPM and scale
-- [**Bun**](https://bun.sh/): Fast JavaScript runtime for development and building the app
-- [**Vite**](https://vitejs.dev/): Lightning-fast frontend build tool
-- [**Alpine.js**](https://alpinejs.dev/): Lightweight JavaScript framework for UI reactivity
-- [**Pico CSS**](https://picocss.com/): Minimal CSS framework for clean and responsive design
-- **Vanilla JS**: Core logic and audio controls
-- **HTML5 & CSS3**: Markup and styling
-- **MP3 Audio files**: Lehra/Nagma tracks
+- **Progressive Web App (PWA):**
+  - **Service Workers:** For robust offline caching of all app assets and audio files.
+  - **Web App Manifest:** To make the application installable on user devices.
+- **Core Libraries:**
+  - [**Tone.js**](https://tonejs.github.io/): For all audio playback and manipulation (BPM, pitch).
+  - [**Unpoly.js**](https://unpoly.com/): For fast, seamless navigation between pages without full reloads.
+  - [**Alpine.js**](https://alpinejs.dev/): For lightweight and reactive UI components.
+- **Build & Development:**
+  - [**Bun**](https://bun.sh/): Fast JavaScript runtime for development and building.
+  - [**Vite**](https://vitejs.dev/): Modern frontend build tool.
+- **Styling:**
+  - [**Pico CSS**](https://picocss.com/): Minimal CSS framework for a clean, responsive design (using the "Jade" theme).
 
 ## Project Structure
 
 ```
-index.html           # Root redirect page
-app/                 # Built app output (after build)
-  index.html         # Main app entry point
-  assets/            # Bundled JS/CSS
-  audio/             # Lehra/Nagma MP3 files
-  static/            # SVG icons
-public/              # Static assets for Vite
-src/                 # Source JS and CSS
-vite.config.js       # Vite configuration
-package.json         # Project metadata and scripts
+index.html                # Main entry point (home page)
+public/
+  audio/                  # Lehra/Nagma MP3 files
+  static/                 # Static assets (icons, logo, favicon)
+  templates/
+    disclaimers.html      # Disclaimers partial
+    footer.html           # Footer partial
+    header.html           # Header partial
+  tracks.json             # Track metadata
+  player.html             # Player page template
+  manifest.json           # PWA manifest file
+  service-worker.js       # PWA service worker script
+src/
+  app.js                  # Main JS entry, initializations (Alpine, Unpoly, Service Worker)
+  styles.css              # Main stylesheet
+  toast.js                # Toast notification utility
+  utils.js                # Shared helper functions
+  components/
+    playerPage.js         # Alpine.js component for the player
+    tracks.js             # Alpine.js component for the track list
+package.json              # Project metadata and scripts
+vite.config.js            # Vite build configuration
+bun.lock                  # Bun dependency lock file
+README.md                 # This documentation
 ```
 
 ## Getting Started
@@ -55,12 +75,11 @@ bun run dev
 bun run build
 ```
 
-The production build outputs to the `app/` directory.
-
 ## Deployment
 
-- Deploy the contents of the `app/` directory to your static hosting (e.g., GitHub Pages).
-- The root `index.html` contains a redirect script to `/app` for correct routing on GitHub Pages.
+- The production build (via `bun run build`) outputs to the `../riyaaz.github.io/` directory by default.
+- Deploy the contents of the `../riyaaz.github.io` directory to any static hosting provider (e.g., GitHub Pages, Vercel, Netlify).
+- The service worker will handle caching and offline functionality automatically.
 
 ## Contributing
 

@@ -36,3 +36,97 @@ body {
     height: 18px;
     fill: crimson;
 }
+
+/* Player Controls UI Styles */
+#player {
+  text-align: center;
+}
+.track-info {
+  margin-bottom: 1em;
+}
+.taal-row {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.taal-icon {
+  font-size: 1.5em;
+}
+.track-beats {
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+.raag-instrument {
+  font-size: 1em;
+}
+.scale-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.arrow-btn {
+  font-size: 2em;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  line-height: 2em;
+}
+.scale-letter {
+  font-size: 3rem;
+  min-width: 2em;
+  display: inline-block;
+  margin: 2rem 0;
+}
+.bpm-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 320px;
+}
+.bpm-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+.bpm-controls .bpm-row:first-child {
+  justify-content: space-between;
+}
+.bpm-btn {
+  font-size: 1.5em;
+  width: 3em;
+  height: 2.5em;
+  padding: 0;
+}
+.bpm-value {
+  font-size: 3rem;
+  font-weight: bold;
+  min-width: 2em;
+  display: inline-block;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+}
+
+.time-display {
+    min-width: 45px;
+    text-align: center;
+    font-family: monospace;
+}

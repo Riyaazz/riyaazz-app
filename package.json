@@ -1,5 +1,5 @@
 {
-  "name": "lehra-nagma-app",
+  "name": "riyaazz-app",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -16,9 +16,11 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@alpinejs/persist": "^3.14.9",
     "alpinejs": "^3.14.9",
     "sweetalert2": "^11.22.0",
     "tone": "^15.1.22",
+    "unpoly": "^3.10.2",
     "vite": "^6.3.5"
   }
 }
